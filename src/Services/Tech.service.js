@@ -27,7 +27,8 @@ const createTech = async (body) => {
 
         const create = await TechModel.create(body)
 
-        return create
+        const allTech = await TechModel.find()
+        return allTech
 
         
     } catch (error) {
@@ -41,7 +42,8 @@ const deleteTech = async (_id) => {
 
     try {
         const deleted = await TechModel.findOneAndDelete({_id})
-        return "borrado"
+        const allTech = await TechModel.find()
+        return allTech
     } catch (error) {
         console.log(error)
     }

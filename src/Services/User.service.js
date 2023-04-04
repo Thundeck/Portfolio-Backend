@@ -12,17 +12,14 @@ const getAllUsers = async () =>{
     }
 }
 
-const createUser = async (body) => {
+const createUser = async (data) => {
 
     const {
         password,
-        repeatPassword,
         email,
-    } = body
+    } = data
 
     if (!password) throw "User's password is required";
-    if (!repeatPassword) throw "it is necessary to repeat the password";
-    if (repeatPassword !== password) throw "the password is different";
     if (!email) throw "User's email is required";
     if (email !== process.env.USER_MAIL) throw "Please, if you are not the owner, do not attempt to log in";
 
@@ -31,7 +28,7 @@ const createUser = async (body) => {
         const address = await UserModel.findOne({email})
         if (address) throw "email already in use"
 
-        const create = await UserModel.create({...body})
+        const create = await UserModel.create({...data})
 
         return create
 

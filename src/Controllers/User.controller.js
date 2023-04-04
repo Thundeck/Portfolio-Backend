@@ -9,10 +9,10 @@ const getAllUsers = async (_req, res) =>{
     }
 }
 
-const createUser = async (req, res) =>{
+const createUser = async (data) =>{
     try {
-        const User = await UserService.createUser(req.body)
-        res.status(200).json({user:User,msg:"created, check your email"})
+        const User = await UserService.createUser(data)
+        User && console.log("created")
     } catch (error) {
         res.status(400).send(error)
 

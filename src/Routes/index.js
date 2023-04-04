@@ -5,13 +5,13 @@ const router = Router();
 // Importar todos los routers;
 
 const User = require("./User");
-const Proyect = require("./Proyect");
+const Project = require("./Project");
 const Tech = require("./Tech");
 
 
 // Configurar los routers
 router.use("/user", User);
-router.use("/proyect", Proyect);
+router.use("/project", Project);
 router.use("/tech", Tech);
 
 

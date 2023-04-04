@@ -7,13 +7,16 @@ const OBJECT = mongoose.Types.ObjectId
 
 const UserSchema = new Schema({
     images: {
-        type:Array,
+        type:String,
     },
     name: {
         type:String,
         require:true,
     },
     deploy: {
+        type:String
+    },
+    description: {
         type:String
     },
     repo: {
@@ -28,6 +31,6 @@ const UserSchema = new Schema({
 
 })
 
-const UserModel = mongoose.model("proyect", UserSchema)
+const UserModel = mongoose.model("project", UserSchema)
 
 module.exports = UserModel
