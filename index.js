@@ -4,7 +4,7 @@ const db = require("./src/db")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const morgan = require("morgan")
-const Routes = require("./src/routes/index")
+const Routes = require("./src/Routes/routes")
 dotenv.config();
 const port = process.env.PORT
 
