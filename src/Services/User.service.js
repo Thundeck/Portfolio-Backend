@@ -53,8 +53,15 @@ const deleteUser = async (_id) => {
 
 const authenticateUser = async (data) => {
     const { email, password } = data;
+
+    console.log("esto es data",data)
   
     const clientOnDb = await UserModel.findOne({email});
+
+    console.log("esto es clientOnDb",clientOnDb)
+
+    console.log("esto es process.env.PASS",process.env.PASS)
+
   
     if (!clientOnDb) throw "Please, if you are not the owner, do not attempt to log in.";
   
