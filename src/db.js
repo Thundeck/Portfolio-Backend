@@ -1,8 +1,5 @@
 const mongoose = require("mongoose")
 const dotenv = require("dotenv");
-const { createUser } = require("./Controllers/User.controller");
-const {  } = require("./Controllers/Types.controller");
-const { createUser } = require("./Controllers/User.controller");
 dotenv.config()
 
 mongoose.set('strictQuery', false);
